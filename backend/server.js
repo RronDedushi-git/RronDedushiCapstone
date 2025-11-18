@@ -3,6 +3,9 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 
+import categoryRoutes from "./routes/categoryRoutes.js";
+import stepRoutes from "./routes/stepRoutes.js";
+
 dotenv.config();
 
 const app = express();
