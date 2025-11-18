@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 const router = express.Router();
 
-// GET random step: 
+// GET random step:
 router.get("/random", async (req, res) => {
   const { categoryId } = req.query;
 
@@ -43,6 +43,23 @@ router.post("/", async (req, res) => {
   try {
     const created = await Step.create({ categoryId, text });
     res.status(201).json(created);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// UPDATE a step
+router.put("/:id", async (req, res) => {
+  const { text } = req.body;
+
+  try {
+    const updated = await Step.findByIdAndUpdate(
+      req.params.id,
+      { text },
+      { new: true }
+    );
+
+    res.json(updated);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

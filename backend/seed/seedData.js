@@ -2,7 +2,7 @@ export const seedCategories = [
   { name: "Mindfulness", icon: "leaf" },
   { name: "Fitness", icon: "dumbbell" },
   { name: "Productivity", icon: "chart-no-axes-combined" },
-  { name: "Cleaning", icon: "brush-cleaning" },
+  { name: "Cleaning", icon: "bubbles" },
   { name: "Self-Care", icon: "heart" },
 ];
 
