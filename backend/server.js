@@ -5,6 +5,7 @@ import cors from "cors";
 
 import categoryRoutes from "./routes/categoryRoutes.js";
 import stepRoutes from "./routes/stepRoutes.js";
+import { seedIfNeeded } from "./seed/runSeed.js";
 
 dotenv.config();
 
