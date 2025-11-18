@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import API from "../hooks/useApi";
+import useApi from "../hooks/useApi";
+const api = useApi();
 
 import {
   Leaf,
   Dumbbell,
   Heart,
-  Brush,
+  Bubbles,
   ChartNoAxesCombined,
 } from "lucide-react";
 
@@ -13,7 +14,7 @@ const iconMap = {
   leaf: Leaf,
   dumbbell: Dumbbell,
   heart: Heart,
-  "brush-cleaning": Brush,
+  bubbles: Bubbles,
   "chart-no-axes-combined": ChartNoAxesCombined,
 };
 
@@ -21,8 +22,9 @@ export default function Categories() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    API.get("/categories")
-      .then((res) => setCategories(res.data))
+    api
+      .get("/categories")
+      .then((res) => setCategories(res))
       .catch((err) => console.log(err));
   }, []);
 
