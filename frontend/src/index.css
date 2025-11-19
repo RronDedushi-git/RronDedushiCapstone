@@ -161,3 +161,11 @@ a:hover {
   color: #222;
   line-height: 1.5;
 }
+
+.brand-logo {
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 0.5px;
+}

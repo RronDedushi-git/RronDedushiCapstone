@@ -4,7 +4,7 @@ import "../App.css";
 export default function Home() {
   return (
     <div className="container" style={{ textAlign: "center" }}>
-      <h1 style={{ fontWeight: 600 }}>KZN</h1>
+      <h1 className="brand-logo">KZN</h1>
 
       <h2 style={{ fontWeight: 400 }}>Become 1% Better Today</h2>
 
