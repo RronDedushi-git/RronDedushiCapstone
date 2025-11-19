@@ -4,11 +4,11 @@ import useApi from "../hooks/useApi";
 
 export default function StepGenerator() {
   const { categoryId } = useParams();
-  const { get } = useApi();
+  const api = useApi();
   const [step, setStep] = useState(null);
 
   async function fetchRandomStep() {
-    const data = await get(`/steps/random?categoryId=${categoryId}`);
+    const data = await api.get(`/steps/random?categoryId=${categoryId}`);
     setStep(data);
   }
 
@@ -17,7 +17,7 @@ export default function StepGenerator() {
   }, [categoryId]);
 
   return (
-    <div>
+    <div style={{ padding: "20px" }}>
       <h1>Today’s 1% Better Step</h1>
 
       {step ? (
@@ -28,7 +28,9 @@ export default function StepGenerator() {
         <p>Loading...</p>
       )}
 
-      <button onClick={fetchRandomStep}>Give me another</button>
+      <button onClick={fetchRandomStep} style={{ marginTop: "20px" }}>
+        Give me another
+      </button>
     </div>
   );
 }

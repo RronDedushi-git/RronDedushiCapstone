@@ -38,16 +38,19 @@ export default function Categories() {
           const Icon = iconMap[cat.icon];
 
           return (
-            <li
-              key={cat._id}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                margin: "10px 0",
-              }}
-            >
-              <Icon size={24} style={{ marginRight: "10px" }} />
-              {cat.name}
+            <li key={cat._id} style={{ margin: "10px 0" }}>
+              <Link
+                to={`/category/${cat._id}`}
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <Icon size={24} style={{ marginRight: "10px" }} />
+                {cat.name}
+              </Link>
             </li>
           );
         })}

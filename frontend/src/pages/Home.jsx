@@ -1,38 +1,67 @@
-import { Link } from "react-router-dom";
-
 export default function Home() {
   return (
-    <div
-      style={{
-        padding: "40px 20px",
-        maxWidth: "600px",
-        margin: "0 auto",
-        textAlign: "center",
-      }}
-    >
-      <h1 style={{ fontSize: "3rem", marginBottom: "10px" }}>KZN</h1>
+    <div style={{ textAlign: "center", marginTop: "80px" }}>
+      {/* Logo */}
+      <h1
+        style={{
+          fontSize: "40px",
+          fontWeight: 100, // thin
+        }}
+      >
+        KZN
+      </h1>
 
-      <h2 style={{ fontSize: "1.5rem", marginBottom: "20px" }}>
+      {/* Headline */}
+      <h2
+        style={{
+          fontSize: "28px",
+          marginTop: "20px",
+          fontWeight: 400, // regular
+        }}
+      >
         Become 1% Better Today
       </h2>
 
-      <p style={{ marginBottom: "40px", fontStyle: "italic" }}>
+      {/* Tagline */}
+      <p
+        style={{
+          marginTop: "10px",
+          fontSize: "16px",
+          fontWeight: 300, // light
+          fontStyle: "italic", // italic
+        }}
+      >
         Small Steps, Big Moves.
       </p>
 
-      <Link
-        to="/categories"
+      {/* Sub-heading */}
+      <p
         style={{
-          padding: "12px 24px",
-          background: "black",
+          marginTop: "10px",
+          fontSize: "14px",
+          fontWeight: 300,
+          color: "#444",
+        }}
+      >
+        Where do you want to grow 1% today?
+      </p>
+
+      <button
+        style={{
+          marginTop: "30px",
+          padding: "10px 20px",
+          backgroundColor: "black",
           color: "white",
           borderRadius: "8px",
-          textDecoration: "none",
-          fontSize: "1.1rem",
+          cursor: "pointer",
+          border: "none",
+          fontSize: "15px",
+          fontWeight: 300, // light
+          letterSpacing: "0.5px",
         }}
       >
         Choose a Category
-      </Link>
+      </button>
     </div>
   );
 }
