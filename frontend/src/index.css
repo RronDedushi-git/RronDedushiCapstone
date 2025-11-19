@@ -108,3 +108,11 @@ a:hover {
   background: #f0f0f0;
   transform: scale(1.02);
 }
+
+.about-text {
+  max-width: 700px;
+  margin: 15px auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+}
