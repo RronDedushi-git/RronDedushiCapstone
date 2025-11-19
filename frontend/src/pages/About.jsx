@@ -1,7 +1,9 @@
 export default function About() {
   return (
     <div className="page-container" style={{ textAlign: "center" }}>
-      <h1>About KZN</h1>
+      <h1>
+        About <em>KZN</em>
+      </h1>
 
       <p className="about-text">
         KZN is inspired by the Kaizen philosophy, the idea of continuous

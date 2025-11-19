@@ -11,9 +11,9 @@ export default function Navbar() {
       </div>
 
       <div className="nav-right">
-        <Link to="/"><em>Home</em></Link>
-        <Link to="/categories"><em>Categories</em></Link>
-        <Link to="/about"><em>About</em></Link>
+        <Link to="/">Home</Link>
+        <Link to="/categories">Categories</Link>
+        <Link to="/about">About</Link>
       </div>
     </nav>
   );

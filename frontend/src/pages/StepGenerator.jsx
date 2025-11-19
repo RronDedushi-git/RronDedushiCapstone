@@ -18,13 +18,11 @@ export default function StepGenerator() {
 
   return (
     <div className="step-container">
-      <h1 className="step-title">Today’s 1% Better Step</h1>
+      <h2 className="step-title">Today's 1% Better Step</h2>
 
-      <div className="step-card">
-        {step ? <p className="step-text">{step.text}</p> : <p>Loading...</p>}
-      </div>
+      <div className="step-card">{step ? step.text : "Loading..."}</div>
 
-      <button className="button" onClick={fetchRandomStep}>
+      <button className="button step-button" onClick={fetchRandomStep}>
         Give me another
       </button>
     </div>
