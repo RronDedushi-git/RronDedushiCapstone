@@ -47,6 +47,12 @@ export default function Categories() {
           );
         })}
       </ul>
+
+      <div style={{ marginTop: "30px" }}>
+        <Link to="/add-category" className="button add-category-btn">
+          + Add Category
+        </Link>
+      </div>
     </div>
   );
 }
