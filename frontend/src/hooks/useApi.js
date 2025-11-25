@@ -1,5 +1,7 @@
 export default function useApi() {
-  const BASE_URL = "http://localhost:5050/api";
+  const BASE_URL = import.meta.env.PROD
+    ? "https://kzn-backend.onrender.com/api"
+    : "http://localhost:5050/api";
 
   async function get(url) {
     const res = await fetch(BASE_URL + url);

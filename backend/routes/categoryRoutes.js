@@ -6,7 +6,6 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    // No alphabetical sort — returns in creation order
     const categories = await Category.find();
     res.json(categories);
   } catch (err) {
