@@ -17,8 +17,6 @@ body {
   line-height: 1.6;
 }
 
-/* ---------------- GLOBAL LAYOUT ---------------- */
-
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -90,11 +88,14 @@ a:hover {
 /* ---------------- HOME PAGE ---------------- */
 
 .home-container {
-  position: fixed;
-  top: 30%;
-  left: 42%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
+  padding: 5rem 1rem;
+  min-height: 70vh;
   animation: fadeIn 0.8s ease forwards;
   opacity: 0;
 }
@@ -121,6 +122,29 @@ a:hover {
   background: #111;
   color: white;
   transition: all 0.2s ease;
+}
+
+/* MOBILE FIX FOR HOME PAGE */
+@media (max-width: 768px) {
+  .home-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    min-height: auto;
+  }
+
+  .home-logo {
+    font-size: 40px;
+  }
+
+  .home-subtitle {
+    font-size: 14px;
+  }
+
+  .main-cta {
+    margin-top: 30px;
+    font-size: 15px;
+    padding: 12px 28px;
+  }
 }
 
 @keyframes fadeIn {
@@ -178,8 +202,6 @@ a:hover {
   line-height: 1.6;
   color: #444;
 }
-
-/* ---------------- CATEGORY MANAGEMENT ---------------- */
 
 .manage-form {
   display: flex;
@@ -276,8 +298,7 @@ a:hover {
   opacity: 0.7;
 }
 
-/* ---------------------------------------------- */
-/* CLEAN MODAL SYSTEM     */
+/* ---------------- MODALS ---------------- */
 
 .modal-overlay {
   position: fixed;
@@ -363,14 +384,12 @@ a:hover {
   transition: all 0.2s ease;
 }
 
-/* prevent turning black on hover */
 .modal-secondary:hover {
   background: #ddd !important;
   color: #222 !important;
   transform: translateY(-1px);
 }
 
-/* prevent button:active global style */
 .modal-secondary:active {
   transform: translateY(0);
   opacity: 0.9;
