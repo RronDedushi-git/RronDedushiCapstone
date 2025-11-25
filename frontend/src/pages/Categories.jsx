@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useApi from "../hooks/useApi";
-const api = useApi();
 
 import {
   Leaf,
@@ -9,6 +8,8 @@ import {
   Heart,
   Bubbles,
   ChartNoAxesCombined,
+  Settings,
+  Footprints,
 } from "lucide-react";
 
 const iconMap = {
@@ -17,16 +18,15 @@ const iconMap = {
   heart: Heart,
   bubbles: Bubbles,
   "chart-no-axes-combined": ChartNoAxesCombined,
+  footprints: Footprints, // DEFAULT NEW ICON
 };
 
 export default function Categories() {
   const [categories, setCategories] = useState([]);
+  const api = useApi();
 
   useEffect(() => {
-    api
-      .get("/categories")
-      .then((res) => setCategories(res))
-      .catch((err) => console.log(err));
+    api.get("/categories").then(setCategories);
   }, []);
 
   return (
@@ -35,20 +35,32 @@ export default function Categories() {
 
       <ul className="category-list">
         {categories.map((cat) => {
-          const Icon = iconMap[cat.icon];
+          const Icon = iconMap[cat.icon] || Footprints;
 
           return (
-            <li key={cat._id}>
-              <Link to={`/category/${cat._id}`} className="category-item">
-                <Icon size={26} />
-                <span>{cat.name}</span>
-              </Link>
+            <li key={cat._id} className="category-wrapper">
+              <div className="category-item">
+                <Link
+                  to={`/category/${cat._id}`}
+                  className="category-main-link"
+                >
+                  <Icon size={24} />
+                  <span>{cat.name}</span>
+                </Link>
+
+                <Link
+                  to={`/category/${cat._id}/manage`}
+                  className="settings-btn"
+                >
+                  <Settings size={20} />
+                </Link>
+              </div>
             </li>
           );
         })}
       </ul>
 
-      <div style={{ marginTop: "30px" }}>
+      <div style={{ marginTop: 40, textAlign: "center" }}>
         <Link to="/add-category" className="button add-category-btn">
           + Add Category
         </Link>
