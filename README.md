@@ -103,3 +103,5 @@ npm run dev
 - Allow custom icons for categories
 
 ## Live Site
+
+https://kzn-onepercentbetter.netlify.app/
