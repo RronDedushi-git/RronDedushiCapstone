@@ -75,4 +75,14 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// GET steps for a category
+router.get("/category/:categoryId", async (req, res) => {
+  try {
+    const steps = await Step.find({ categoryId: req.params.categoryId });
+    res.json(steps);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 export default router;
